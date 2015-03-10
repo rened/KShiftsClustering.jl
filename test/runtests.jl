@@ -12,5 +12,7 @@ facts("all") do
     end
     @fact round(Int, sort(vec(centers)))  =>  [1:10]
 
+    centers, ids = kshiftmedoids(rand(10, 100000), 10)
+
     centers = kshifts(rand(2,1000), 10)
 end

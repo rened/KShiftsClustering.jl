@@ -1,8 +1,8 @@
 module KShiftsClustering
 
-using FunctionalDataUtils
+using FunctionalDataUtils, KDTrees
 
-export kshifts, kshifts!, kshiftlabels
+export kshifts, kshifts!, kshiftlabels, kshiftmedoids
 
 function kshifts{T}(data::Array{T,2}, k::Int)
     centers = @p randsample data k
@@ -46,6 +46,15 @@ function kshifts{T}(data::Array{T,2}, k::Int)
     centers = @p randsample data k
     kshifts!(data, centers)
 end
+
+function kshiftmedoids(data,k)
+    centers = kshifts(data,k)
+    tree = KDTree(float(data))
+    knnID(a) = @p knn tree vec(a) 1  | fst | fst
+    ids = @p map centers knnID
+    part(data, ids), ids
+end
+
 
 function dist(a,i,b,j)
     sum = zeroel(a)

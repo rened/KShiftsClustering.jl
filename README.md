@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rened/KShiftsClustering.jl.svg?branch=master)](https://travis-ci.org/rened/KShiftsClustering.jl)
 
-A very fast method for data clustering, yielding results similar to kmeans in a fraction of the time. It updates its cluster centers using one data point at a time, so it is well suited for streaming clustering.
+A very fast method for data clustering, yielding results similar to kmeans in a fraction of the time. It updates its cluster centers using one data point at a time, so it is well suited for streaming clustering. A helper function for obtaining mediods is included.
 
 Pseudo code:
 
@@ -28,6 +28,12 @@ for i = 1:100
     data = rand(2,10)
     kshifts!(data, centers)
 end
+```
+
+To get the original data points which are closest to the found centers use `kshiftsmedoids`:
+
+```jl
+centers, IDs = kshiftsmedoids(data, k)
 ```
 
 #### Performance
