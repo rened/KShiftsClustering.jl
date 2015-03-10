@@ -2,7 +2,7 @@ module KShiftsClustering
 
 using FunctionalDataUtils, KDTrees
 
-export kshifts, kshifts!, kshiftlabels, kshiftmedoids
+export kshifts, kshifts!, kshiftslabels, kshiftmedoids
 
 function kshifts{T}(data::Array{T,2}, k::Int)
     centers = @p randsample data k
@@ -126,7 +126,7 @@ function kshifts!{T}(data::Array{T,2}, centers::Array{T,2})
     centers
 end
 
-function kshiftlabels(data, centers)
+function kshiftslabels(data, centers)
     labels = zeros(Int32,1,len(data))
     dv = view(data)
     for i = 1:len(data)

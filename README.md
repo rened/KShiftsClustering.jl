@@ -17,7 +17,7 @@ for sample in data
 ```jl
 data = rand(2,1000)
 centers = kshifts(data,10)
-labels = kshiftlabels(data, centers)
+labels = kshiftslabels(data, centers)
 ```
 
 To perform online clustering, you can update the cluster centers with more data:
@@ -45,7 +45,7 @@ data = rand(2,100_000)
 
 @time begin
     centers = kshifts(data,10)
-    labels = kshiftlabels(data, centers)
+    labels = kshiftslabels(data, centers)
 end
 #  =>  elapsed time: 0.026258854 seconds (401400 bytes allocated)
 
