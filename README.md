@@ -14,7 +14,7 @@ for sample in data
 
 #### Usage
 
-``jl
+```jl
 data = rand(2,1000)
 centers = kshifts(data,10)
 labels = kshiftlabels(data, centers)
