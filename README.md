@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/rened/KShiftsClustering.jl.svg?branch=master)](https://travis-ci.org/rened/KShiftsClustering.jl)
 
-A very fast method for data clustering, yielding results similar to kmeans in a fraction of the time. It updates its cluster centers using one data point at a time, so it is well suited for streaming clustering. A helper function for obtaining mediods is included.
+A very fast method for data clustering, yielding results similar to kmeans in a fraction of the time. It updates its cluster centers using one data point at a time, so it is well suited for streaming clustering. A helper function for obtaining medoids is included.
 
 Pseudo code:
 
