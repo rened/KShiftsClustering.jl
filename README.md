@@ -21,7 +21,7 @@ labels = kshiftlabels(data, centers)
 ```
 
 To perform online clustering, you can update the cluster centers with more data:
-``jl
+```jl
 data = rand(2,1000)
 centers = kshifts(data,10)
 for i = 1:100
@@ -33,6 +33,7 @@ end
 #### Performance
 
 KShifts is very fast, and has very low memory requirements:
+
 ```jl
 data = rand(2,100_000)
 
