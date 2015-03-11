@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/rened/KShiftsClustering.jl.svg?branch=master)](https://travis-ci.org/rened/KShiftsClustering.jl)
 
-A very fast method for data clustering, yielding results similar to kmeans in a fraction of the time. It updates its cluster centers using one data point at a time, so it is well suited for streaming clustering. A helper function for obtaining medoids is included.
+Provides an implementation of KShifts [1], fast method for data clustering, yielding results similar to kmeans in a fraction of the time. It updates its cluster centers using one data point at a time, so it is well suited for streaming clustering. A helper function for obtaining medoids is included.
+
+[1] [Efficient and Distinct Large Scale Bags of Words](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.187.1423&rep=rep1&type=pdf)
 
 Pseudo code:
 
