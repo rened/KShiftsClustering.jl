@@ -28,7 +28,7 @@ data = rand(2,1000)
 centers = kshifts(data,10)
 for i = 1:100
     data = rand(2,10)
-    kshifts!(data, centers)
+    kshifts!(centers, data)
 end
 ```
 
@@ -61,13 +61,13 @@ end
 Finally, let's look at some results:
 
 ```jl
-using FunctionalData
+using PyPlot, KShiftsClustering, FunctionalData
 data = @p map unstack(1:10) (x->10*randn(2,1).+randn(2,1000)) | flatten
+
 centers = kshifts(data,10)
 labels = kshiftslabels(data,centers)
 
-using PyPlot
-scatter(data[1,:], data[2,:], c=labels, marker = "o")
+scatter(data[1,:], data[2,:], c=labels, marker = "o", edgecolor = "none")
 plot(centers[1,:], centers[2,:], "ro")
 ```
 ![](example.png)

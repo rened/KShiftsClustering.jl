@@ -8,7 +8,7 @@ facts("all") do
 
     centers = kshifts(getdata(1000), 10)
     for i = 1:100
-        kshifts!(getdata(1000), centers)
+        kshifts!(centers, getdata(1000))
     end
     @fact round(Int, sort(vec(centers)))  =>  [1:10]
 
