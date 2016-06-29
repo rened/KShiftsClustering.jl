@@ -54,6 +54,14 @@ function kshifts!{T}(centers::Array{T,2}, data::Array{T,2})
 end
 
 function kshiftslabels(data, centers)
+    if len(data)>10000
+        @p lmap data kshiftslabels_ centers
+    else
+        kshiftslabels_(data, centers)
+    end
+end
+
+function kshiftslabels_(data, centers)
     labels = zeros(Int32,1,len(data))
     dv = view(data)
     for i = 1:len(data)
