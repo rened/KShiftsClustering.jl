@@ -1,6 +1,9 @@
 # KShiftsClustering
 
-[![Build Status](https://travis-ci.org/rened/KShiftsClustering.jl.svg?branch=master)](https://travis-ci.org/rened/KShiftsClustering.jl)
+[![Build Status](https://travis-ci.org/rened/KShiftsClustering.jl.png)](https://travis-ci.org/rened/KShiftsClustering.jl)
+[![Build Status](http://pkg.julialang.org/badges/KShiftsClustering_0.4.svg)](http://pkg.julialang.org/?pkg=KShiftsClustering&ver=0.4)
+[![Build Status](http://pkg.julialang.org/badges/KShiftsClustering_0.5.svg)](http://pkg.julialang.org/?pkg=KShiftsClustering&ver=0.5)
+
 
 Provides an implementation of KShifts [1], fast method for data clustering, yielding results similar to kmeans in a fraction of the time. It updates its cluster centers using one data point at a time, so it is well suited for streaming clustering. A helper function for obtaining medoids is included.
 

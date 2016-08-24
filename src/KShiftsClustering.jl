@@ -1,8 +1,8 @@
-VERSION >= v"0.4.0-dev+6521" && __precompile__()
+__precompile__()
 
 module KShiftsClustering
 
-using FunctionalDataUtils, KDTrees
+using FunctionalDataUtils, NearestNeighbors
 
 export kshifts, kshifts!, kshiftslabels, kshiftmedoids
 
@@ -32,8 +32,8 @@ function kshifts!{T}(centers::Array{T,2}, data::Array{T,2})
     assert(sizem(data)==sizem(centers))
     f1 = 29/30
     f2 = 1-f1
-    dv = view(data)
-    cv = view(centers)
+    dv = FD.view(data)
+    cv = FD.view(centers)
     for i = 1:len(data)
         v = typemax(eltype(centers))
         ind = 0
@@ -63,7 +63,7 @@ end
 
 function kshiftslabels_(data, centers)
     labels = zeros(Int32,1,len(data))
-    dv = view(data)
+    dv = FD.view(data)
     for i = 1:len(data)
         v = typemax(eltype(centers))          
         ind = 0
