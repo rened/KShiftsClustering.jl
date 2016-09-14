@@ -61,8 +61,8 @@ function kshiftslabels(data, centers)
     end
 end
 
-kshiftslabels_(data, centers) = kshiftslabels!(data, centers, zeros(Int,1,len(data)))
-function kshiftslabels!(data, centers, labels)
+kshiftslabels_(data, centers) = kshiftslabels!(zeros(Int,1,len(data)),data, centers)
+function kshiftslabels!(labels, data, centers)
     dv = FD.view(data)
     for i = 1:len(data)
         v = typemax(eltype(centers))          
