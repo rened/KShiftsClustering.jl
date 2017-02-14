@@ -32,8 +32,8 @@ end
     assert(sizem(data)==sizem(centers))
     f1 = 29/30
     f2 = 1-f1
-    dv = FD.view(data)
-    cv = FD.view(centers)
+    dv = FD.view(data)::Array{T,2}
+    cv = FD.view(centers)::Array{T,2}
     for i = 1:len(data)
         v = typemax(eltype(centers))
         ind = 0
