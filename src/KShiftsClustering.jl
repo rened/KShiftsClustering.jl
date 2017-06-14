@@ -2,7 +2,7 @@ __precompile__()
 
 module KShiftsClustering
 
-using FunctionalDataUtils, NearestNeighbors
+using FunctionalData, FunctionalDataUtils, NearestNeighbors
 
 export kshifts, kshifts!, kshiftslabels, kshiftslabels!, kshiftmedoids
 
