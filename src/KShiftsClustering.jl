@@ -31,7 +31,7 @@ end
     f1 = 29/30
     f2 = 1-f1
     for i = 1:size(data, 2)
-        data_view = view(data, i)
+        data_view = view(data, :, i)
         v = typemax(eltype(centers))
         ind = 0
         for j = 1:size(centers, 2)
@@ -41,7 +41,7 @@ end
                 ind = j
             end
         end
-        center_view = view(centers, ind)
+        center_view = view(centers, :, ind)
         for d = 1:size(center_view, 1)
             center_view[d] = f1*center_view[d] + f2*data_view[d]
         end
